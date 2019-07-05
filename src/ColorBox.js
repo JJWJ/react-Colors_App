@@ -149,8 +149,6 @@ class ColorBox extends Component {
 	render () {
 		const { name, background, moreUrl, showLink, classes } = this.props;
 		const { copied } = this.state;
-		const isDarkColor = chroma(background).luminance() <= 0.08;
-		const isLightColor = chroma(background).luminance() >= 0.08;
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
 				<div style={{ background: background }} className={classes.ColorBox}>
