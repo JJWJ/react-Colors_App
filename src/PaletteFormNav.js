@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import PaletteDialogForm from './PaletteDialogForm';
 
 const drawerWidth = 400;
 
@@ -56,22 +56,10 @@ const styles = (theme) => ({
 class PaletteFormNav extends Component {
 	constructor (props) {
 		super(props);
-		this.state = {
-			newPaletteName : '',
-		};
-		this.handleChange = this.handleChange.bind(this);
-	}
-	componentDidMount () {
-		ValidatorForm.addValidationRule('isUniquePaletteName', (value) =>
-			this.props.palettes.every(({ paletteName }) => paletteName.toLocaleLowerCase() !== value.toLowerCase()),
-		);
-	}
-	handleChange (e) {
-		this.setState({ [e.target.name]: e.target.value });
+		this.state = {};
 	}
 	render () {
-		const { classes, open } = this.props;
-		const { newPaletteName } = this.state;
+		const { classes, open, palettes, handleSubmit } = this.props;
 		return (
 			<div>
 				<CssBaseline />
@@ -94,25 +82,7 @@ class PaletteFormNav extends Component {
 						</Typography>
 					</Toolbar>
 					<div className={classes.navButtons}>
-						<ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
-							<TextValidator
-								label='Palette Name'
-								value={this.state.newPaletteName}
-								name='newPaletteName'
-								onChange={this.handleChange}
-								validators={[
-									'required',
-									'isUniquePaletteName',
-								]}
-								errorMessages={[
-									'A palette name is required',
-									'Palette name already used',
-								]}
-							/>
-							<Button variant='contained' color='secondary' type='submit'>
-								Save Palette
-							</Button>
-						</ValidatorForm>
+						<PaletteDialogForm palettes={palettes} handleSubmit={handleSubmit} />
 					</div>
 					<Link to='/'>
 						<Button variant='contained' color='secondary'>
