@@ -7,7 +7,7 @@ const styles = {
 		display               : 'inline-block',
 		position              : 'relative',
 		cursor                : 'pointer',
-		marginBottom          : '-0.225rem',
+		marginBottom          : '-0.4rem',
 		'&:hover $deleteIcon' : {
 			color     : 'white',
 			transform : 'scale(1.6)',
