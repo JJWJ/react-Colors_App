@@ -14,7 +14,6 @@ class SingleColorPalette extends Component {
 			format : 'hex',
 		};
 		this.changeFormat = this.changeFormat.bind(this);
-		// console.log(this._shades);
 	}
 	gatherShades (palette, colorToFilter) {
 		let shades = [];
