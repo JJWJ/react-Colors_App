@@ -30,6 +30,9 @@ class NewPaletteForm extends Component {
 		this.clearColors = this.clearColors.bind(this);
 		this.addRandomColor = this.addRandomColor.bind(this);
 	}
+	componentDidMount () {
+		console.log(this.props.palettes);
+	}
 
 	handleDrawerOpen = () => {
 		this.setState({ open: true });
@@ -68,8 +71,15 @@ class NewPaletteForm extends Component {
 	}
 	addRandomColor () {
 		const allColors = this.props.palettes.map((p) => p.colors).flat();
-		let rand = Math.floor(Math.random() * allColors.length);
-		const randomColor = allColors[rand];
+		let rand;
+		let randomColor;
+		let isDuplicateColor = true;
+		while (isDuplicateColor) {
+			rand = Math.floor(Math.random() * allColors.length);
+			randomColor = allColors[rand];
+			isDuplicateColor = this.state.colors.some((color) => color.name === randomColor.name);
+		}
+		console.log(randomColor);
 		this.setState({
 			colors : [
 				...this.state.colors,
@@ -140,7 +150,7 @@ class NewPaletteForm extends Component {
 					})}>
 					<div className={classes.drawerHeader} />
 					<DraggableColorList
-						colors={this.state.colors}
+						colors={colors}
 						removeColorBox={this.removeColorBox}
 						axis='xy'
 						onSortEnd={this.onSortEnd}
