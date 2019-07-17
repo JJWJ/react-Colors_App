@@ -55,15 +55,15 @@ class PaletteDialogForm extends Component {
 	}
 
 	render () {
-		const { newPaletteName } = this.state;
+		const { newPaletteName, stage } = this.state;
 		const { hideForm } = this.props;
 		return (
 			<div>
-				<Dialog open={this.state.stage === 'emoji'}>
+				<Dialog open={stage === 'emoji'}>
 					<DialogTitle id='form-dialog-title'>Choose an Emoji</DialogTitle>
 					<Picker onSelect={this.savePalette} />
 				</Dialog>
-				<Dialog open={this.state.stage === 'nameForm'} onClose={hideForm} aria-labelledby='form-dialog-title'>
+				<Dialog open={stage === 'nameForm'} onClose={hideForm} aria-labelledby='form-dialog-title'>
 					<DialogTitle id='form-dialog-title'>Choose a Palette Name</DialogTitle>
 					<ValidatorForm onSubmit={this.openEmoji}>
 						<DialogContent>
