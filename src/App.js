@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Route, Switch } from 'react-router-dom';
 import Palette from './Palette';
-import seedColors from './seedColors';
-import SingleColorPalette from './SingleColorPalette';
-import { generatePalette } from './ColorHelpers';
 import PaletteList from './PaletteList';
+import SingleColorPalette from './SingleColorPalette';
 import NewPaletteForm from './NewPaletteForm';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import seedColors from './seedColors';
+import { generatePalette } from './ColorHelpers';
 import Page from './Page';
 
 class App extends Component {
