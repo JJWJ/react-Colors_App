@@ -1,9 +1,9 @@
-export default [
+const seedColors = [
 	{
-		paletteName : 'Material UI Colors',
-		id          : 'material-ui-colors',
-		emoji       : '🎨',
-		colors      : [
+		paletteName: 'Material UI Colors',
+		id: 'material-ui-colors',
+		emoji: '🎨',
+		colors: [
 			{ name: 'red', color: '#F44336' },
 			{ name: 'pink', color: '#E91E63' },
 			{ name: 'purple', color: '#9C27B0' },
@@ -26,10 +26,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors v1',
-		id          : 'flat-ui-colors-v1',
-		emoji       : '🤙',
-		colors      : [
+		paletteName: 'Flat UI Colors v1',
+		id: 'flat-ui-colors-v1',
+		emoji: '🤙',
+		colors: [
 			{ name: 'Turquoise', color: '#1abc9c' },
 			{ name: 'Emerald', color: '#2ecc71' },
 			{ name: 'PeterRiver', color: '#3498db' },
@@ -53,10 +53,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors Dutch',
-		id          : 'flat-ui-colors-dutch',
-		emoji       : '🇳🇱',
-		colors      : [
+		paletteName: 'Flat UI Colors Dutch',
+		id: 'flat-ui-colors-dutch',
+		emoji: '🇳🇱',
+		colors: [
 			{ name: 'Sunflower', color: '#FFC312' },
 			{ name: 'Energos', color: '#C4E538' },
 			{ name: 'BlueMartina', color: '#12CBC4' },
@@ -80,10 +80,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors American',
-		id          : 'flat-ui-colors-american',
-		emoji       : '🇺🇸',
-		colors      : [
+		paletteName: 'Flat UI Colors American',
+		id: 'flat-ui-colors-american',
+		emoji: '🇺🇸',
+		colors: [
 			{ name: 'LightGreenishBlue', color: '#55efc4' },
 			{ name: 'FadedPoster', color: '#81ecec' },
 			{ name: 'GreenDarnerTail', color: '#74b9ff' },
@@ -107,10 +107,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors Aussie',
-		id          : 'flat-ui-colors-aussie',
-		emoji       : '🇦🇺',
-		colors      : [
+		paletteName: 'Flat UI Colors Aussie',
+		id: 'flat-ui-colors-aussie',
+		emoji: '🇦🇺',
+		colors: [
 			{ name: 'Beekeeper', color: '#f6e58d' },
 			{ name: 'SpicedNectarine', color: '#ffbe76' },
 			{ name: 'PinkGlamour', color: '#ff7979' },
@@ -134,10 +134,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors British',
-		id          : 'flat-ui-colors-british',
-		emoji       : '🇬🇧',
-		colors      : [
+		paletteName: 'Flat UI Colors British',
+		id: 'flat-ui-colors-british',
+		emoji: '🇬🇧',
+		colors: [
 			{ name: 'ProtossPylon', color: '#00a8ff' },
 			{ name: 'Periwinkle', color: '#9c88ff' },
 			{ name: 'Rise-N-Shine', color: '#fbc531' },
@@ -161,10 +161,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors Spanish',
-		id          : 'flat-ui-colors-spanish',
-		emoji       : '🇪🇸',
-		colors      : [
+		paletteName: 'Flat UI Colors Spanish',
+		id: 'flat-ui-colors-spanish',
+		emoji: '🇪🇸',
+		colors: [
 			{ name: 'JacksonsPurple', color: '#40407a' },
 			{ name: 'C64Purple', color: '#706fd3' },
 			{ name: 'SwanWhite', color: '#f7f1e3' },
@@ -188,10 +188,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors Indian',
-		id          : 'flat-ui-colors-indian',
-		emoji       : '🇮🇳',
-		colors      : [
+		paletteName: 'Flat UI Colors Indian',
+		id: 'flat-ui-colors-indian',
+		emoji: '🇮🇳',
+		colors: [
 			{ name: 'OrchidOrange', color: '#FEA47F' },
 			{ name: 'SpiroDiscoBall', color: '#25CCF7' },
 			{ name: 'HoneyGlow', color: '#EAB543' },
@@ -215,10 +215,10 @@ export default [
 		],
 	},
 	{
-		paletteName : 'Flat UI Colors French',
-		id          : 'flat-ui-colors-french',
-		emoji       : '🇫🇷',
-		colors      : [
+		paletteName: 'Flat UI Colors French',
+		id: 'flat-ui-colors-french',
+		emoji: '🇫🇷',
+		colors: [
 			{ name: 'FlatFlesh', color: '#fad390' },
 			{ name: 'MelonMelody', color: '#f8c291' },
 			{ name: 'Livid', color: '#6a89cc' },
@@ -242,3 +242,5 @@ export default [
 		],
 	},
 ];
+
+export default seedColors;
