@@ -1,37 +1,47 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import ColorBox from './ColorBox';
-import PaletteFooter from './PaletteFooter';
+import Navbar from './components/Navbar';
+import ColorBox from './components/ColorBox';
+import PaletteFooter from './components/PaletteFooter';
 import styles from './styles/PaletteStyles';
 
 class SingleColorPalette extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
-		this._shades = this.gatherShades(this.props.palette, this.props.colorId);
+		this._shades = this.gatherShades(
+			this.props.palette,
+			this.props.colorId,
+		);
 		this.state = {
-			format : 'hex',
+			format: 'hex',
 		};
 		this.changeFormat = this.changeFormat.bind(this);
 	}
-	gatherShades (palette, colorToFilter) {
+	gatherShades(palette, colorToFilter) {
 		let shades = [];
 		let allColors = palette.colors;
 
 		for (let key in allColors) {
-			shades = shades.concat(allColors[key].filter((color) => color.id === colorToFilter));
+			shades = shades.concat(
+				allColors[key].filter((color) => color.id === colorToFilter),
+			);
 		}
 		return shades.slice(1);
 	}
-	changeFormat (val) {
+	changeFormat(val) {
 		this.setState({ format: val });
 	}
-	render () {
+	render() {
 		const { classes } = this.props;
 		const { format } = this.state;
 		const colorBoxes = this._shades.map((color) => (
-			<ColorBox key={color.name} name={color.name} background={color[format]} showLink={false} />
+			<ColorBox
+				key={color.name}
+				name={color.name}
+				background={color[format]}
+				showLink={false}
+			/>
 		));
 		const { paletteName, emoji, id } = this.props.palette;
 		return (
@@ -40,7 +50,11 @@ class SingleColorPalette extends Component {
 				<div className={classes.colors}>
 					{colorBoxes}
 					<div className={classes.goBack}>
-						<Link to={`/palette/${id}`} key='Go Back' className='back-button'>
+						<Link
+							to={`/palette/${id}`}
+							key='Go Back'
+							className='back-button'
+						>
 							Go Back
 						</Link>
 					</div>

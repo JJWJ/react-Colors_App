@@ -3,32 +3,41 @@ import { Link } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/styles';
 import classNames from 'classnames';
-import styles from './styles/ColorBoxStyles';
+import styles from '../styles/ColorBoxStyles';
 
 class ColorBox extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = { copied: false };
 		this.changeCopyState = this.changeCopyState.bind(this);
 	}
 
-	changeCopyState () {
+	changeCopyState() {
 		this.setState({ copied: true }, () => {
 			setTimeout(() => this.setState({ copied: false }), 1500);
 		});
 	}
-	render () {
+	render() {
 		const { name, background, moreUrl, showLink, classes } = this.props;
 		const { copied } = this.state;
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
-				<div style={{ background: background }} className={classes.ColorBox}>
+				<div
+					style={{ background: background }}
+					className={classes.ColorBox}
+				>
 					<div
 						style={{ background: background }}
-						className={classNames(classes.copyOverlay, { [classes.showOverlay]: copied })}
+						className={classNames(classes.copyOverlay, {
+							[classes.showOverlay]: copied,
+						})}
 					/>
 
-					<div className={classNames(classes.copyMessage, { [classes.showCopyMessage]: copied })}>
+					<div
+						className={classNames(classes.copyMessage, {
+							[classes.showCopyMessage]: copied,
+						})}
+					>
 						<h1>copied</h1>
 						<p className={classes.copyText}>{background}</p>
 					</div>

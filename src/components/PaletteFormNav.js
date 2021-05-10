@@ -10,29 +10,35 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import PaletteDialogForm from './PaletteDialogForm';
-import styles from './styles/PaletteFormNavStyles';
+import styles from '../styles/PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = {
-			formShowing : false,
+			formShowing: false,
 		};
 		this.showForm = this.showForm.bind(this);
 		this.hideForm = this.hideForm.bind(this);
 	}
-	showForm () {
+	showForm() {
 		this.setState({
-			formShowing : true,
+			formShowing: true,
 		});
 	}
-	hideForm () {
+	hideForm() {
 		this.setState({
-			formShowing : false,
+			formShowing: false,
 		});
 	}
-	render () {
-		const { classes, open, palettes, handleSubmit, handleDrawerOpen } = this.props;
+	render() {
+		const {
+			classes,
+			open,
+			palettes,
+			handleSubmit,
+			handleDrawerOpen,
+		} = this.props;
 		return (
 			<div>
 				<CssBaseline />
@@ -41,13 +47,17 @@ class PaletteFormNav extends Component {
 					color='default'
 					className={classNames(classes.appBar, {
 						[classes.appBarShift]: open,
-					})}>
+					})}
+				>
 					<Toolbar disableGutters={!open}>
 						<IconButton
 							color='inherit'
 							aria-label='Open drawer'
 							onClick={handleDrawerOpen}
-							className={classNames(classes.menuButton, { [classes.hide]: open })}>
+							className={classNames(classes.menuButton, {
+								[classes.hide]: open,
+							})}
+						>
 							<MenuIcon />
 						</IconButton>
 						<Typography variant='h6' color='inherit' noWrap>
@@ -56,17 +66,30 @@ class PaletteFormNav extends Component {
 					</Toolbar>
 					<div className={classes.navButtons}>
 						<Link to='/'>
-							<Button variant='contained' className={classes.button} color='secondary'>
+							<Button
+								variant='contained'
+								className={classes.button}
+								color='secondary'
+							>
 								Go Back
 							</Button>
 						</Link>
-						<Button variant='contained' className={classes.button} color='primary' onClick={this.showForm}>
+						<Button
+							variant='contained'
+							className={classes.button}
+							color='primary'
+							onClick={this.showForm}
+						>
 							Save Palette
 						</Button>
 					</div>
 				</AppBar>
 				{this.state.formShowing && (
-					<PaletteDialogForm palettes={palettes} handleSubmit={handleSubmit} hideForm={this.hideForm} />
+					<PaletteDialogForm
+						palettes={palettes}
+						handleSubmit={handleSubmit}
+						hideForm={this.hideForm}
+					/>
 				)}
 			</div>
 		);

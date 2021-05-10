@@ -14,36 +14,34 @@ import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
-import MiniPalette from './MiniPalette';
+import MiniPalette from './components/MiniPalette';
 
 class PaletteList extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = {
-			deleteDialog : false,
-			deleteId     : '',
+			deleteDialog: false,
+			deleteId: '',
 		};
 		this.toggleDialog = this.toggleDialog.bind(this);
 		this.handelDelete = this.handelDelete.bind(this);
 		this.goToPalette = this.goToPalette.bind(this);
 	}
-	toggleDialog (id) {
+	toggleDialog(id) {
 		this.setState({
-			deleteDialog : !this.state.deleteDialog,
-			deleteId     :
-				id ? id :
-				'',
+			deleteDialog: !this.state.deleteDialog,
+			deleteId: id ? id : '',
 		});
 	}
-	handelDelete () {
+	handelDelete() {
 		this.props.deletePaletteById(this.state.deleteId);
 		this.toggleDialog();
 	}
 
-	goToPalette (id) {
+	goToPalette(id) {
 		this.props.history.push(`/palette/${id}`);
 	}
-	render () {
+	render() {
 		const { palette, classes } = this.props;
 		const { deleteDialog } = this.state;
 		return (
@@ -55,7 +53,11 @@ class PaletteList extends Component {
 					</nav>
 					<TransitionGroup className={classes.palettes}>
 						{palette.map((palette) => (
-							<CSSTransition key={palette.id} classNames='fade' timeout={500}>
+							<CSSTransition
+								key={palette.id}
+								classNames='fade'
+								timeout={500}
+							>
 								<MiniPalette
 									{...palette}
 									goToPalette={this.goToPalette}
@@ -67,12 +69,23 @@ class PaletteList extends Component {
 						))}
 					</TransitionGroup>
 				</div>
-				<Dialog open={deleteDialog} aria-labelledby='delete-dialog-title' onClose={this.toggleDialog}>
-					<DialogTitle id='delete-dialog-title'>Delete This Palette?</DialogTitle>
+				<Dialog
+					open={deleteDialog}
+					aria-labelledby='delete-dialog-title'
+					onClose={this.toggleDialog}
+				>
+					<DialogTitle id='delete-dialog-title'>
+						Delete This Palette?
+					</DialogTitle>
 					<List>
 						<ListItem button onClick={this.handelDelete}>
 							<ListItemAvatar>
-								<Avatar style={{ backgroundColor: blue[100], color: blue[600] }}>
+								<Avatar
+									style={{
+										backgroundColor: blue[100],
+										color: blue[600],
+									}}
+								>
 									<CheckIcon />
 								</Avatar>
 							</ListItemAvatar>
@@ -80,7 +93,12 @@ class PaletteList extends Component {
 						</ListItem>
 						<ListItem button onClick={this.toggleDialog}>
 							<ListItemAvatar>
-								<Avatar style={{ backgroundColor: red[100], color: red[600] }}>
+								<Avatar
+									style={{
+										backgroundColor: red[100],
+										color: red[600],
+									}}
+								>
 									<CloseIcon />
 								</Avatar>
 							</ListItemAvatar>
