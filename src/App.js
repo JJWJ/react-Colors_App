@@ -10,47 +10,55 @@ import { generatePalette } from './ColorHelpers';
 import Page from './Page';
 
 class App extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
-		const localPalettes = JSON.parse(window.localStorage.getItem('palettes'));
+		const localPalettes = JSON.parse(
+			window.localStorage.getItem('palettes'),
+		);
 		this.state = { palettes: localPalettes || seedColors };
 		this.savePalette = this.savePalette.bind(this);
 		this.findPalette = this.findPalette.bind(this);
 		this.deletePaletteById = this.deletePaletteById.bind(this);
 	}
-	findPalette (id) {
-		return this.state.palettes.find(function (palette){
+	findPalette(id) {
+		return this.state.palettes.find(function(palette) {
 			return palette.id === id;
 		});
 	}
 
-	savePalette (newPalette) {
+	savePalette(newPalette) {
 		this.setState(
 			{
-				palettes : [
-					...this.state.palettes,
-					newPalette,
-				],
+				palettes: [ ...this.state.palettes, newPalette ],
 			},
 			this.syncLocalStorage,
 		);
 	}
-	syncLocalStorage () {
-		window.localStorage.setItem('palettes', JSON.stringify(this.state.palettes));
+	syncLocalStorage() {
+		window.localStorage.setItem(
+			'palettes',
+			JSON.stringify(this.state.palettes),
+		);
 	}
 
-	deletePaletteById (id) {
+	deletePaletteById(id) {
 		this.setState(
-			(st) => ({ palettes: st.palettes.filter((palette) => palette.id !== id) }),
+			(st) => ({
+				palettes: st.palettes.filter((palette) => palette.id !== id),
+			}),
 			this.syncLocalStorage,
 		);
 	}
-	render () {
+	render() {
 		return (
 			<Route
 				render={({ location }) => (
 					<TransitionGroup>
-						<CSSTransition key={location.key} classNames='page' timeout={500}>
+						<CSSTransition
+							key={location.key}
+							classNames='page'
+							timeout={500}
+						>
 							<Switch location={location}>
 								<Route
 									path='/palette/new'
@@ -59,9 +67,12 @@ class App extends Component {
 											<NewPaletteForm
 												savePalette={this.savePalette}
 												palettes={
-
-														this.state.palettes.length > 0 ? this.state.palettes :
+													this.state.palettes.length >
+													0 ? (
+														this.state.palettes
+													) : (
 														seedColors
+													)
 												}
 												{...routeProps}
 											/>
@@ -75,7 +86,9 @@ class App extends Component {
 										<Page>
 											<PaletteList
 												palette={this.state.palettes}
-												deletePaletteById={this.deletePaletteById}
+												deletePaletteById={
+													this.deletePaletteById
+												}
 												{...routeProps}
 											/>
 										</Page>
@@ -88,7 +101,10 @@ class App extends Component {
 										<Page>
 											<Palette
 												palette={generatePalette(
-													this.findPalette(routeProps.match.params.paletteId),
+													this.findPalette(
+														routeProps.match.params
+															.paletteId,
+													),
 												)}
 											/>
 										</Page>
@@ -101,9 +117,15 @@ class App extends Component {
 										<Page>
 											<SingleColorPalette
 												palette={generatePalette(
-													this.findPalette(routeProps.match.params.singlePaletteId),
+													this.findPalette(
+														routeProps.match.params
+															.singlePaletteId,
+													),
 												)}
-												colorId={routeProps.match.params.colorId}
+												colorId={
+													routeProps.match.params
+														.colorId
+												}
 											/>
 										</Page>
 									)}
@@ -113,7 +135,9 @@ class App extends Component {
 										<Page>
 											<PaletteList
 												palette={this.state.palettes}
-												deletePaletteById={this.deletePaletteById}
+												deletePaletteById={
+													this.deletePaletteById
+												}
 												{...routeProps}
 											/>
 										</Page>
