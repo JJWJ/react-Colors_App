@@ -1,8 +1,12 @@
+// React Imports
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+// Style Import
 import './index.css';
+// App Import
 import App from './App';
+// Service Worker Import
 import * as serviceWorker from './serviceWorker';
 
 const router = (

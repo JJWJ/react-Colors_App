@@ -1,4 +1,7 @@
+// React Imports
 import React, { Component } from 'react';
+import { arrayMove } from 'react-sortable-hoc';
+// Material-Ui imports
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
@@ -6,12 +9,14 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Button from '@material-ui/core/Button';
-import { arrayMove } from 'react-sortable-hoc';
 import classNames from 'classnames';
+// Component Imports
 import DraggableColorList from './components/DraggableColorList';
 import PaletteFormNav from './components/PaletteFormNav';
 import ColorPickerForm from './components/ColorPickerForm';
+// Style Import
 import styles from './styles/NewPaletteFormsStyles';
+// Data Import
 import seedColors from './seedColors';
 
 class NewPaletteForm extends Component {

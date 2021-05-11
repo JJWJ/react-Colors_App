@@ -1,13 +1,17 @@
+// React Imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+// Material-Ui Imports
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import 'rc-slider/assets/index.css';
-import Slider from 'rc-slider';
 import { withStyles } from '@material-ui/styles';
+// Helper Style Imports
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+// Style Import
 import styles from '../styles/NavbarStyles';
 
 class Navbar extends Component {

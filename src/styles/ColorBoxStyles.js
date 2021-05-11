@@ -1,4 +1,6 @@
+// Chroma Import
 import chroma from 'chroma-js';
+// Data Import
 import sizes from './sizes';
 
 const styles = {

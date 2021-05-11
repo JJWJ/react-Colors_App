@@ -1,7 +1,9 @@
+// React Import
 import React from 'react';
+// Style Import
 import './styles/Page.css';
 
-function Page ({ children }){
+function Page({ children }) {
 	return <section className='page'>{children}</section>;
 }
 

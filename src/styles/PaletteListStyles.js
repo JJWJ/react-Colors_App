@@ -1,5 +1,8 @@
+// Data Import
 import sizes from './sizes';
+// Background Import
 import bg from './bg.svg';
+
 const styles = {
 	'@global': {
 		'.fade-exit': {

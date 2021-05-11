@@ -1,4 +1,6 @@
+// Data Import
 import sizes from './sizes';
+
 const styles = {
 	Navbar: {
 		display: 'flex',

@@ -1,9 +1,13 @@
+// React Imports
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
+// Material-Ui Import
+import { withStyles } from '@material-ui/styles';
+// Component Imports
 import Navbar from './components/Navbar';
 import ColorBox from './components/ColorBox';
 import PaletteFooter from './components/PaletteFooter';
+// Style Import
 import styles from './styles/PaletteStyles';
 
 class SingleColorPalette extends Component {

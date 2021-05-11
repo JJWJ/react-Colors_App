@@ -1,7 +1,10 @@
+// React Imports
 import React from 'react';
-import { withStyles } from '@material-ui/styles';
 import { SortableElement } from 'react-sortable-hoc';
+// Material-Ui Imports
+import { withStyles } from '@material-ui/styles';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+// Style Import
 import styles from '../styles/DraggableColorBoxStyles';
 
 const DraggableColorBox = SortableElement((props) => {
