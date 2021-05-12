@@ -41,7 +41,7 @@ const styles = {
 	},
 	nav: {
 		display: 'flex',
-		width: '100%',
+		width: '94%',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		color: 'white',

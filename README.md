@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Color Palette Creator
 
-## Available Scripts
+Color Palette Creator is a convenient tool for design. It can be used to put together a quick custom color palette to use  
+directly in a project or for inspiration. It allows for quickly adjusting the colors saturation and copying it to the clipboard  
+It uses local storage to persist the palettes.
+---
 
-In the project directory, you can run:
+### ScreenShots
+#### Homepage
+![List of color palettes](./screenshots/Home.png)
+#### Selected Palette
+![Shows all color in color palette](./screenshots/Palette.png)
+#### Selected Color
+![Shows color with all saturation](./screenshots/Color.png)
+#### Copy to clipboard
+![Shows color copied to the clipboard](./screenshots/Copy.png)
+#### Color palette creation
+![Create a color palette](./screenshots/Create.png)
+![Naming a color palette](./screenshots/Name.png)
+![Adding a emoji](./screenshots/Emoji.png)
+#### Delete a color palette
+![Deleting a color palette](./screenshots/Delete.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Patterns
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* Class Based Stateful Components
 
-### `npm test`
+* Local Storage
+---
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies
 
-### `npm run build`
+* React.Js
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Material UI
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Working Example 
 
-### `npm run eject`
+<!-- [CampCritic](https://frozen-plains-12452.herokuapp.com/home) -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Local install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+git clone https://github.com/JJWJ/react-Colors_App.git
+```
+`npm start` or `yarn start`
+Runs the app on localhost:3000
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
