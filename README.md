@@ -40,8 +40,6 @@ It uses local storage to persist the palettes.
 
 ### Working Example 
 
-<!-- [CampCritic](https://frozen-plains-12452.herokuapp.com/home) -->
-
 
 ---
 
