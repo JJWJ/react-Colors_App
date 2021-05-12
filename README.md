@@ -1,7 +1,7 @@
 # Color Palette Creator
 
 Color Palette Creator is a convenient tool for design. It can be used to put together a quick custom color palette to use directly in a project or for inspiration. 
-It allows for quickly adjusting the colors saturation and copying it to the clipboard. It uses local storage to persist the palettes.
+The main usage case is for quickly copying a color to the clipboard. Local storage is used to persist the palettes.
 
 ---
 
