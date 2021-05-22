@@ -37,11 +37,11 @@ The main usage case is for quickly copying a color to the clipboard. Local stora
 * Material UI
 
 ---
-
+<!-- 
 ### Working Example 
 
 
----
+--- -->
 
 ### Local install
 
